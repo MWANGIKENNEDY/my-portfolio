@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import NavLink from "./navLink";
+import { motion } from "framer-motion";
 
 const links = [
   { url: "/", title: "Home" },
@@ -13,6 +14,37 @@ const links = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const topVariants = {
+    closed: {
+      rotate: 0,
+    },
+
+    opened: {
+      rotate: 45,
+      backgroundColor: "rgb(255,255,255)",
+    },
+  };
+
+  const centerVariants = {
+    closed: {
+      opacity: 1,
+    },
+
+    opened: {
+      opacity: 0,
+    },
+  };
+
+  const bottomVariants = {
+    closed: {
+      rotate: 0,
+    },
+
+    opened: {
+      rotate: -45,
+      backgroundColor: "rgb(255,255,255)",
+    },
+  };
 
   const handleClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
     setOpen(!open);
@@ -37,9 +69,21 @@ const Navbar = () => {
           className="w-10 h-8 flex flex-col justify-between relative z-50"
           onClick={handleClick}
         >
-          <div className="w-10 h-1 bg-white rounded"></div>
-          <div className="w-10 h-1 bg-white rounded"></div>
-          <div className="w-10 h-1 bg-white rounded"></div>
+          <motion.div
+            variants={topVariants}
+            animate={open ? "opened" : "closed"}
+            className="w-10 h-1 bg-black rounded origin-left"
+          ></motion.div>
+          <motion.div
+            variants={centerVariants}
+            animate={open ? "opened" : "closed"}
+            className="w-10 h-1 bg-black rounded "
+          ></motion.div>
+          <motion.div
+            variants={bottomVariants}
+            animate={open ? "opened" : "closed"}
+            className="w-10 h-1 bg-black rounded origin-left"
+          ></motion.div>
         </button>
         {/* MENU LIST */}
         {open && (
@@ -57,11 +101,11 @@ const Navbar = () => {
 
       <div className="hidden md:flex gap-4 flex-1  justify-center">
         {links.map((link) => (
-        <NavLink link={link} key={link.title}/>
+          <NavLink link={link} key={link.title} />
         ))}
       </div>
 
-{/* SOCIAL ICONS */}
+      {/* SOCIAL ICONS */}
       <div className="hidden md:flex gap-2 flex-1  justify-end">
         <Link href="#">
           <i className="uil uil-instagram-alt"></i>

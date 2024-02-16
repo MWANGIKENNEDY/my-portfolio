@@ -52,11 +52,11 @@ const Navbar = () => {
     },
     opened: {
       x: 0,
-      transition:{
+      transition: {
         //run parent first then animate the children
         //when:"beforeChilren",
-        staggerChildren:0.2
-      }
+        staggerChildren: 0.2,
+      },
     },
   };
 

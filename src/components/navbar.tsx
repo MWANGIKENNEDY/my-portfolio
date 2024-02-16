@@ -46,6 +46,31 @@ const Navbar = () => {
     },
   };
 
+  const listVariants = {
+    closed: {
+      x: "100vw",
+    },
+    opened: {
+      x: 0,
+      transition:{
+        //run parent first then animate the children
+        //when:"beforeChilren",
+        staggerChildren:0.2
+      }
+    },
+  };
+
+  const listItemVariants = {
+    closed: {
+      x: -10,
+      opacity: 0,
+    },
+    opened: {
+      x: 0,
+      opacity: 1,
+    },
+  };
+
   const handleClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
     setOpen(!open);
   };
@@ -87,13 +112,18 @@ const Navbar = () => {
         </button>
         {/* MENU LIST */}
         {open && (
-          <div className="absolute z-30 top-0 left-0 w-screen h-screen bg-black text-white flex flex-col justify-center items-center gap-8 text-3xl">
+          <motion.div
+            variants={listVariants}
+            initial="closed"
+            animate="opened"
+            className="absolute z-30 top-0 left-0 w-screen h-screen bg-black text-white flex flex-col justify-center items-center gap-8 text-3xl"
+          >
             {links.map((link) => (
-              <Link key={link.title} href={link.url}>
-                {link.title}
-              </Link>
+              <motion.div variants={listItemVariants} key={link.title}>
+                <Link href={link.url}>{link.title}</Link>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
       </div>
 

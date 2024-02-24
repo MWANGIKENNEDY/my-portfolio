@@ -45,7 +45,7 @@ const TransitionProvider = ({ children }: Props) => {
         <div className="h-24">
           <Navbar />
         </div>
-        <div className="h-[calc(100vh-6rem)] px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
+        <div className="h-[calc(100vh-6rem)] ">
           {children}
         </div>
       </div>

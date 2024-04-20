@@ -13,10 +13,11 @@ const page = () => {
   const skillsRef = useRef();
   const experienceRef = useRef();
 
-  const isSkillsRefInView = useInView(skillsRef);
+  const isSkillsRefInView = useInView(skillsRef,{margin:"-100px"});
   //if you want to see the animation only once
   //const isSkillsRefInView = useInView(skillsRef,{once:true});
-  const isExperienceRefInView = useInView(experienceRef);
+  // const isSkillsRefInView = useInView(skillsRef,{margin:"-100px"});
+  const isExperienceRefInView = useInView(experienceRef,{margin:"-100px"});
 
   return (
     <motion.div
@@ -185,7 +186,7 @@ const page = () => {
             <motion.h1
               className="font-bold text-2xl"
               initial={{ x: "-300px" }}
-              animate={isSkillsRefInView ? { x: 0 } : {}}
+              animate={isExperienceRefInView ? { x: 0 } : {}}
               transition={{ delay: 0.2 }}
             >
               EXPERIENCE
@@ -195,7 +196,7 @@ const page = () => {
 
             <motion.div
               initial={{ x: "-300px" }}
-              animate={isSkillsRefInView ? { x: 0 } : {}}
+              animate={isExperienceRefInView ? { x: 0 } : {}}
             >
               {/* EXPERIENCE LIST ITEM */}
 

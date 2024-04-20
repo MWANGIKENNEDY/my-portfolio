@@ -42,7 +42,7 @@ const TransitionProvider = ({ children }: Props) => {
           animate={{ height: "0vh", transition: { delay: 0.5 } }}
         ></motion.div>
 
-        <div className="h-24">
+<div className="h-24">
           <Navbar />
         </div>
         <div className="h-[calc(100vh-6rem)] ">

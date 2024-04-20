@@ -8,7 +8,7 @@ const ContactPage = () => {
 
   const [success,setSuccess] = useState(false);
   const [error,setError] = useState(false);
-  const form = useRef();
+  const form = useRef(null);
   const sendEmail = (e) => {
     e.preventDefault();
     setError(false);

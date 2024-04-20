@@ -42,7 +42,7 @@ const items = [
 ];
 
 const AboutPage = () => {
-  const ref = useRef();
+  const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({ target: ref });
 

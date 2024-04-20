@@ -10,8 +10,8 @@ const PortfolioPage = () => {
 
   const { scrollYProgress } = useScroll({ container: containerRef });
 
-  const skillsRef = useRef();
-  const experienceRef = useRef();
+  const skillsRef = useRef(null);
+  const experienceRef = useRef(null);
 
   const isSkillsRefInView = useInView(skillsRef,{margin:"-100px"});
   //if you want to see the animation only once

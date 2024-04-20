@@ -15,11 +15,11 @@ const ContactPage = () => {
     setSuccess(false);
     emailjs
       .sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        "service_4i7fvh8",
+        "template_cfl38ao",
         form.current,
         {
-          publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
+          publicKey: "0t25nGXoegTBGMaL6",
         }
       )
       .then(

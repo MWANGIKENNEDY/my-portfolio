@@ -5,7 +5,7 @@ import { motion, useInView, useScroll } from "framer-motion";
 
 import React, { useRef } from "react";
 
-const page = () => {
+const PortfolioPage = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({ container: containerRef });
@@ -337,4 +337,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default PortfolioPage;

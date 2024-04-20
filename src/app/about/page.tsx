@@ -41,7 +41,7 @@ const items = [
   },
 ];
 
-const page = () => {
+const AboutPage = () => {
   const ref = useRef();
 
   const { scrollYProgress } = useScroll({ target: ref });
@@ -129,4 +129,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default AboutPage;

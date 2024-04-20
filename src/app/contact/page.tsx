@@ -10,27 +10,30 @@ const ContactPage = () => {
   const [error,setError] = useState(false);
   const form = useRef(null);
   const sendEmail = (e:React.FormEvent) => {
-    e.preventDefault();
-    setError(false);
-    setSuccess(false);
-    emailjs
-      .sendForm(
-        "service_4i7fvh8",
-        "template_cfl38ao",
-        form.current,
-        {
-          publicKey: "0t25nGXoegTBGMaL6",
-        }
-      )
-      .then(
-        () => {
-          setSuccess(true)
-          form.current.reset()
-        },
-        (error) => {
-          setError(true)
-        }
-      );
+    // e.preventDefault();
+    // setError(false);
+    // setSuccess(false);
+
+    // emailjs
+    //   .sendForm(
+    //     "service_4i7fvh8",
+    //     "template_cfl38ao",
+    //     form.current,
+    //     {
+    //       publicKey: "0t25nGXoegTBGMaL6",
+    //     }
+    //   )
+    //   .then(
+    //     () => {
+    //       setSuccess(true);
+    //       form.current.reset()
+    //     },
+    //     (error) => {
+    //       setError(true)
+    //     }
+    //   )
+
+    
   };
   const text = "Say Hello";
   return (

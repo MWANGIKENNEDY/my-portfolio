@@ -1,11 +1,17 @@
 "use client"
 
 import React from 'react'
-import { LinkType } from '@/utils/types' 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-const NavLink = ({link}:{LinkType}) => {
+type Mylink = {
+  link: {
+    url:string,
+    title:string
+}
+}
+
+const NavLink = ({link}:Mylink) => {
 
     const pathName = usePathname();
   return (

@@ -9,7 +9,7 @@ const ContactPage = () => {
   const [success,setSuccess] = useState(false);
   const [error,setError] = useState(false);
   const form = useRef(null);
-  const sendEmail = (e) => {
+  const sendEmail = (e:React.FormEvent) => {
     e.preventDefault();
     setError(false);
     setSuccess(false);
